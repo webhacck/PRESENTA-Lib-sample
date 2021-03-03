@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRESENTA Libのコンテンツサンプル</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/@presenta/lib"></script>
+<script>
+  new Presenta('#app', {
+
+    scenes: [{
+      blocks: [{
+        type: 'text',
+        steps: 'h1, li, p',
+        text: `<h1>サンプルのタイトル</h1>
+               <ul>
+                  <li>リスト１</li> 
+                  <li>リスト２</li> 
+                  <li>リスト３</li> 
+               </ul>
+               <p data-order="3">data属性でも</p>
+               <p data-order="1">表示する順番を</p>
+               <p data-order="2">変更できます</p>`
+      }]
+    },{
+      blocks: [{
+        type: 'text',
+        text: '<h1>画像</h1>'
+      },{
+        type: 'image',
+        url: '画像ファイルのパス'
+      }]
+    },{
+      blocks: [{
+        type: 'text',
+        text: '<h1>動画</h1>'
+      },{
+        type: 'video',
+        url: '動画ファイルのパス',
+      }]      
+    },{
+      blocks: [{
+        type: 'text',
+        text: '<h1>埋め込み</h1>',
+      },{
+        type: 'embed',
+        url: '埋め込みURL'
+      }]
+    }]
+
+  })
+</script>
+</body>
+</html>
