@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRESENTA Libのプラグインサンプル</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/@presenta/lib"></script>
+
+<!-- 各種プラグインの導入 -->
+<script src="https://unpkg.com/@presenta/block-youtube"></script>
+<script src="https://unpkg.com/@presenta/controller-console-notes"></script>
+<script>
+
+  new Presenta('#app', {
+    //初期設定の項目
+    controllers: {
+      keyboard: true,
+      arrows: true,
+      fullscreen: true,
+      focus: true,
+      progressbar: true,
+
+      //スピーカーノートの設定項目
+      consoleNotes: {
+        clear: true
+      },
+    },
+
+  scenes: [{
+    //スピーカーノートの挿入
+    notes: 'このように好きなテキストを表示できるようになります',
+
+    blocks: [{
+      type: 'text',
+      text: '<h1>スピーカーノートのサンプル</h1>'
+    }]
+  },{
+    blocks: [{
+      //YouTubeプラグインの利用
+      type: 'youtube',
+      url: 'YouTube動画のURL'
+    }]
+  }]
+
+  })
+
+</script>
+</body>
+</html>
