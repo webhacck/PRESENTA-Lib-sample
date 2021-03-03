@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRESENTA Libの基本サンプル</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/@presenta/lib"></script>
+<script>
+  new Presenta('#app', {
+
+    scenes: [{
+      blocks: [{
+        type: 'text',
+        text: `<h1>Hello PRESENTA Lib</h1>
+               <p>これはサンプルのスライドです</p>`
+      }]
+    },{
+      blocks: [{
+        type: 'text',
+        text: '<h1>2枚めのスライド</h1>'
+      }]
+    },{
+      blocks: [{
+        type: 'text',
+        text: '<h1>3枚めのスライド</h1>'
+      }]      
+    }]
+
+  })
+</script>
+</body>
+</html>
